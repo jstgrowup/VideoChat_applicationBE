@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 })
 const io = new Server(mainServer, {
     cors: {
-        origin: "https://video-chat-app-brown.vercel.app/",
+        origin: "*",
         methods: ["GET", "POST"]
     }
 })
