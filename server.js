@@ -3,7 +3,7 @@ const express = require("express")
 const app = express()
 const cors = require("cors")
 const { Server } = require("socket.io")
-
+const PORT =process.env.PORT||8080
 const mainServer = createServer(app)
 app.use(cors())
 app.get("/", (req, res) => {
@@ -30,6 +30,6 @@ io.on("connection", (socket) => {
         io.to(data.to).emit("callAccepted", data.signal)
     })
 })
-mainServer.listen(8080, () => {
+mainServer.listen(PORT, () => {
     console.log("server started");
 })
