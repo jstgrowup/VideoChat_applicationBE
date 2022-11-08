@@ -3,7 +3,7 @@ const express = require("express")
 const app = express()
 const cors = require("cors")
 const { Server } = require("socket.io")
-const PORT =process.env.PORT||8080
+const PORT = process.env.PORT || 8080
 const mainServer = createServer(app)
 app.use(cors())
 app.get("/", (req, res) => {
@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 })
 const io = new Server(mainServer, {
     cors: {
-        origin: "*",
+        origin: "https://video-chat-app-brown.vercel.app/",
         methods: ["GET", "POST"]
     }
 })
